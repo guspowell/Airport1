@@ -48,6 +48,7 @@ describe Airport do
   context 'taking off and landing' do
 
     it 'can accept a plane for landing' do
+      allow(plane).to receive(:land!)
       allow(airport).to receive(:stormy?) {false}
       expect(airport.plane_count).to eq(0)
       airport.accept(plane)
@@ -55,6 +56,8 @@ describe Airport do
     end
 
     it 'allow a plane to take off' do
+      allow(plane).to receive(:land!)
+      allow(plane).to receive(:take_off!)
       allow(airport).to receive(:stormy?) {false}
       airport.accept(plane)
       expect(airport.plane_count).to eq(1)
@@ -70,12 +73,14 @@ describe Airport do
     end
 
     it 'should know when it is full' do
+      allow(plane).to receive(:land!)
       allow(airport).to receive(:stormy?) {false}
       fill_airport
       expect(airport).to be_full
     end
 
     it 'a plane cannot land if the airport is full' do
+      allow(plane).to receive(:land!)
       allow(airport).to receive(:stormy?) {false}
       fill_airport
       expect(lambda { airport.accept(plane)}).to raise_error(RuntimeError, "sorry the airport is full")

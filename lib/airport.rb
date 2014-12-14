@@ -21,13 +21,14 @@ class Airport
 		elsif full?
 			raise "sorry the airport is full"
 		else
-			# plane.land!
+			plane.land!
 			@planes << plane
 		end
 	end
 
 	def launch(plane)
 		raise "too stormy to take off" if stormy?
+		plane.take_off!
 		@planes.delete(plane)
 	end
 
