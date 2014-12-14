@@ -1,9 +1,14 @@
+require_relative 'weather.rb'
+
 class Airport
 
-	DEFAULT_CAPACITY = 50
+	include Weather
+
+	DEFAULT_CAPACITY = 6
 
 	def initialize
 		@planes = []
+		@weather = conditions
 	end
 
 	def plane_count
@@ -11,11 +16,18 @@ class Airport
 	end
 
 	def accept(plane)
-		raise "sorry the airport is full" if full? 
-		@planes << plane
+		if stormy? == true
+			raise "too stormy to land"
+		elsif full?
+			raise "sorry the airport is full"
+		else
+			# plane.land!
+			@planes << plane
+		end
 	end
 
 	def launch(plane)
+		raise "too stormy to take off" if stormy?
 		@planes.delete(plane)
 	end
 
