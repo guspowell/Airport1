@@ -1,7 +1,7 @@
 module Weather
 
 	def conditions
-		@weather = ["sunny", "stormy"].sample
+		@weather = ["sunny", "sunny", "sunny", "stormy"].sample
 	end
 
 	def stormy?
