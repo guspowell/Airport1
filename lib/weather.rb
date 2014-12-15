@@ -1,15 +1,11 @@
 module Weather
 
 	def conditions
-		@weather = ["sunny", "sunny", "sunny", "stormy"].sample
+		@weather = [*1..4].sample == 1 ? "stormy" : "sunny"
 	end
 
 	def stormy?
-		if @weather == "stormy"
-			@stormy = true
-		else
-			@stormy = false
-		end
+		@weather == "stormy"
 	end
 
 

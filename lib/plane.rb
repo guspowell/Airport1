@@ -4,6 +4,10 @@ class Plane
 		@status = "flying"
 	end
 
+	def plane_status
+		@status
+	end
+
 	def flying
 		@status = "flying"
 	end
