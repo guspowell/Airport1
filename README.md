@@ -1,22 +1,24 @@
-Airport1
+Airport Challenge
 ====================
+
+Our first weekend challenge at Makers. Similar to Boris Bikes, we were challenged with replicating an Airport in ruby. Of course we had to use OOD and test drive everything.
+
+Brief
+-------------------------
 
 Control the flow of planes at an airport. The planes can land and take off provided that the weather is sunny. Occasionally it may be stormy, in which case no planes can land or take off.
 Finally, every plane must have a status indicating whether it's flying or landed.
 
-====================
+Key Concepts
+--------------------------------
 
+- Ruby
+- OOD
+- TDD
 
-###Class - Plane
+How to install
+------------------
 
-Responsibilites             | Collaborators
-----------------------------|------------------
-Land                        | Plane, Airport
-Take off                    | Plane, Airport
-Status                      | Plane, Airport
+Clone the rep: ```git clone git@github.com:guspowell/Airport_challenge.git```
 
-### Class - Airport
-Responsibilites     | Collaborators
---------------------|------------------------
-Launch              |  Airport, Plane
-Receive             |  Airport, Plane
+```rspec``` will run the tests.
