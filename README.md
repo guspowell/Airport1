@@ -16,9 +16,18 @@ Key Concepts
 - OOD
 - TDD
 
-How to install
+Installation and Testing
 ------------------
 
-Clone the rep: ```git clone git@github.com:guspowell/Airport_challenge.git```
-
-```rspec``` will run the tests.
+Clone the repsitory:
+```
+$ git clone git@github.com:guspowell/Airport_challenge.git
+```
+Change into the repository:
+```
+$ cd Airport_challenge
+```
+Run the tests:
+```
+$ rspec
+```
